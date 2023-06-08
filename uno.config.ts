@@ -17,7 +17,8 @@ export default defineConfig({
       provider: 'google',
       fonts: {
         roboto: 'Roboto:700',
-        rubik: 'Rubik'
+        rubik: 'Rubik',
+        ibm_plex_sans: 'IBM Plex Sans:400,700'
       }
     })
   ],

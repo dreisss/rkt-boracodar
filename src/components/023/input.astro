@@ -1,0 +1,17 @@
+---
+const { textarea, label, placeholder } = Astro.props
+
+const styles =
+  'border border-#E1E1E6 rounded-2px px-4 py-2 text-#323238 resize-none hover:border-#633BBC transition-border-color'
+---
+
+<label class="grid gap-1 text-#323238">
+  <span class="font-bold">{label}</span>
+  {
+    textarea ? (
+      <textarea rows="3" placeholder={placeholder} class={styles} />
+    ) : (
+      <input placeholder={placeholder} class={styles} />
+    )
+  }
+</label>

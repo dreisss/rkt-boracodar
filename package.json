@@ -11,11 +11,15 @@
     "lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\""
   },
   "dependencies": {
+    "@astrojs/alpinejs": "^0.2.2",
     "@astrojs/image": "^0.17.0",
+    "@types/alpinejs": "^3.0.0",
+    "alpinejs": "^3.0.0",
     "astro": "^2.6.1",
     "sharp": "^0.32.1"
   },
   "devDependencies": {
+    "@iconify-json/ph": "^1.1.5",
     "@typescript-eslint/parser": "^5.59.9",
     "@unocss/reset": "^0.53.1",
     "eslint": "^8.42.0",

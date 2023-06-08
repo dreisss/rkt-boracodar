@@ -1,0 +1,7 @@
+---
+const { page, label } = Astro.props
+---
+
+<section class="grid gap-8" x-show={`page == ${page}`} aria-label={label}>
+  <slot />
+</section>

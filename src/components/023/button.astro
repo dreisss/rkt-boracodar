@@ -1,0 +1,20 @@
+---
+const { next, previous, text } = Astro.props
+
+let styles, page_increment
+
+if (next) {
+  styles = 'bg-#633BBC text-white hover:bg-#8257E5'
+  page_increment = 1
+} else if (previous) {
+  styles = 'border border-#633BBC text-#633BBC '
+  page_increment = -1
+}
+---
+
+<button
+  aria-label={text}
+  @click.prevent={`page += ${page_increment}`}
+  class={`px-4 py-2 sm:px-8 sm:py-4 rounded-1.5 uppercase font-bold  transition-background-color outline-offset-2 ${styles}`}>
+  {text}
+</button>

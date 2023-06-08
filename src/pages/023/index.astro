@@ -1,0 +1,98 @@
+---
+import '@/styles/global.css'
+
+import Section from '@/components/023/section.astro'
+import Step from '@/components/023/step.astro'
+import Input from '@/components/023/input.astro'
+import Button from '@/components/023/button.astro'
+---
+
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Projetos semanais #boraCodar da Rocketseat: #23 Um formulário multi step." />
+    <link rel="shortcut icon" type="image/x-icon" href="/rkt-boracodar/favicon.ico" />
+
+    <style is:global>
+      html {
+        color-scheme: light !important;
+      }
+
+      * {
+        @apply selection:(bg-#633BBC text-white);
+      }
+    </style>
+
+    <title>Formulário Multi Step</title>
+  </head>
+  <body class="w-screen h-screen bg-white font-ibm_plex_sans text-base accent-#633BBC p-4">
+    <div class="w-full h-full grid place-content-center">
+      <template x-data="{ page: 1}" x-if="true">
+        <main class="w-full h-full grid p-8 gap-8 rounded-1.5 border bg-white border-#E1E1E6 md:min-w-148">
+          <header class="flex justify-between items-center">
+            <Step number="one" text="Contato" page="1" />
+
+            <div class="ph-caret-right-bold"></div>
+
+            <Step number="two" text="Empresa" page="2" />
+
+            <div class="ph-caret-right-bold"></div>
+
+            <Step number="three" text="Projeto" page="3" />
+          </header>
+
+          <hr class="border-#E1E1E6" />
+
+          <form>
+            <Section page="1" label="Contato">
+              <div class="grid gap-4">
+                <Input label="Nome" placeholder="Como prefere ser chamado" />
+                <Input label="Telefone" placeholder="Digite seu número de WhatsApp" />
+                <Input label="E-mail" placeholder="Digite seu e-mail" />
+              </div>
+
+              <footer class="flex justify-between gap-8">
+                <span></span>
+                <Button next text="continuar" />
+              </footer>
+            </Section>
+
+            <Section page="2" label="Empresa">
+              <div class="grid gap-4">
+                <Input label="Nome da empresa" placeholder="Qual é o nome da empresa" />
+                <Input label="Número de funcionários" placeholder="Digite o número de colaboradores" />
+                <Input textarea label="Sobre seu negócio" placeholder="Fale um pouco sobre seus produtos ou serviços" />
+              </div>
+
+              <footer class="flex justify-between gap-8">
+                <Button previous text="voltar" />
+                <Button next text="continuar" />
+              </footer>
+            </Section>
+
+            <Section page="3" label="Projeto">
+              <div class="grid gap-4">
+                <Input textarea label="Objetivos do projetos" placeholder="Descreva quais os objetivos desse projeto" />
+              </div>
+
+              <footer class="flex justify-between gap-8">
+                <Button previous text="voltar" />
+
+                <Button next text="enviar proposta" />
+              </footer>
+            </Section>
+
+            <Section page="4" label="Enviado">
+              <footer class="flex gap-2 items-center">
+                <i class="ph-check-bold"></i>
+                <p>Seu projeto foi enviado com sucesso!</p>
+              </footer>
+            </Section>
+          </form>
+        </main>
+      </template>
+    </div>
+  </body>
+</html>
