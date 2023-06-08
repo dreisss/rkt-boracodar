@@ -9,7 +9,7 @@ const styles = {
 ---
 
 <h2 class="flex p-2 gap-2 items-center text-#7C7C8A">
-  <i class={`${styles[number]}`} :class={`page == ${page} && 'text-#633BBC'`} x-show={`page <= ${page}`}></i>
+  <i class={styles[number]} :class={`page == ${page} && 'text-#633BBC'`} x-show={`page <= ${page}`}></i>
   <i class="text-7 text-#1D8841 ph-check-circle-fill" x-show={`page > ${page}`}></i>
 
   <span class="font-bold hidden sm:block" :class={`page >= ${page} && 'text-#323238'`}>{text}</span>

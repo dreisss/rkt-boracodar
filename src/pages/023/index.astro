@@ -1,6 +1,8 @@
 ---
 import '@/styles/global.css'
 
+import Repo from '@/components/repo.astro'
+
 import Section from '@/components/023/section.astro'
 import Step from '@/components/023/step.astro'
 import Input from '@/components/023/input.astro'
@@ -28,8 +30,10 @@ import Button from '@/components/023/button.astro'
     <title>Formulário Multi Step</title>
   </head>
   <body class="w-screen h-screen bg-white font-ibm_plex_sans text-base accent-#633BBC p-4">
+    <Repo position="right" color="#633BBC" />
+
     <div class="w-full h-full grid place-content-center">
-      <template x-data="{ page: 1}" x-if="true">
+      <template x-data="{ page: 1 }" x-if="true">
         <main class="w-full h-full grid p-8 gap-8 rounded-1.5 border bg-white border-#E1E1E6 md:min-w-148">
           <header class="flex justify-between items-center">
             <Step number="one" text="Contato" page="1" />
@@ -55,7 +59,7 @@ import Button from '@/components/023/button.astro'
 
               <footer class="flex justify-between gap-8">
                 <span></span>
-                <Button next text="continuar" />
+                <Button text="continuar" next />
               </footer>
             </Section>
 
@@ -63,24 +67,24 @@ import Button from '@/components/023/button.astro'
               <div class="grid gap-4">
                 <Input label="Nome da empresa" placeholder="Qual é o nome da empresa" />
                 <Input label="Número de funcionários" placeholder="Digite o número de colaboradores" />
-                <Input textarea label="Sobre seu negócio" placeholder="Fale um pouco sobre seus produtos ou serviços" />
+                <Input label="Sobre seu negócio" placeholder="Fale um pouco sobre seus produtos ou serviços" textarea />
               </div>
 
               <footer class="flex justify-between gap-8">
-                <Button previous text="voltar" />
-                <Button next text="continuar" />
+                <Button text="voltar" previous />
+                <Button text="continuar" next />
               </footer>
             </Section>
 
             <Section page="3" label="Projeto">
               <div class="grid gap-4">
-                <Input textarea label="Objetivos do projetos" placeholder="Descreva quais os objetivos desse projeto" />
+                <Input label="Objetivos do projetos" placeholder="Descreva quais os objetivos desse projeto" textarea />
               </div>
 
               <footer class="flex justify-between gap-8">
-                <Button previous text="voltar" />
+                <Button text="voltar" previous />
 
-                <Button next text="enviar proposta" />
+                <Button text="enviar proposta" next />
               </footer>
             </Section>
 
