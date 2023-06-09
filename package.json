@@ -28,6 +28,7 @@
     "prettier": "^2.8.8",
     "prettier-config-standard": "^5.0.0",
     "prettier-plugin-astro": "^0.10.0",
+    "prettier-plugin-tailwindcss": "^0.3.0",
     "unocss": "^0.53.1"
   }
 }
