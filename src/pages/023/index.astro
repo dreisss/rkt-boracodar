@@ -2,7 +2,6 @@
 import '@/styles/global.css'
 
 import Repo from '@/components/repo.astro'
-
 import Section from '@/components/023/section.astro'
 import Step from '@/components/023/step.astro'
 import Input from '@/components/023/input.astro'
@@ -12,10 +11,12 @@ import Button from '@/components/023/button.astro'
 <html lang="pt-br">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="Projetos semanais #boraCodar da Rocketseat: #23 Um formulário multi step." />
     <link rel="shortcut icon" type="image/x-icon" href="/rkt-boracodar/favicon.ico" />
+
+    <title>Formulário Multi Step</title>
 
     <style is:global>
       html {
@@ -26,25 +27,24 @@ import Button from '@/components/023/button.astro'
         @apply selection:(bg-#633BBC text-white);
       }
     </style>
-
-    <title>Formulário Multi Step</title>
   </head>
-  <body class="w-screen h-screen bg-white font-ibm_plex_sans text-base accent-#633BBC p-4">
-    <Repo position="right" color="#633BBC" />
 
-    <div class="w-full h-full grid place-content-center">
+  <body class="font-ibm_plex_sans accent-#633BBC h-full w-screen bg-white text-base">
+    <Repo position="top-0 right-0" color="text-#633BBC" />
+
+    <div class="grid min-h-screen w-full place-content-center p-4">
       <template x-data="{ page: 1 }" x-if="true">
-        <main class="w-full h-full grid p-8 gap-8 rounded-1.5 border bg-white border-#E1E1E6 md:min-w-148">
-          <header class="flex justify-between items-center">
-            <Step number="one" text="Contato" page="1" />
+        <main class="rounded-1.5 border-#E1E1E6 md:min-w-148 grid h-full w-full gap-8 border bg-white p-8">
+          <header class="flex items-center justify-between">
+            <Step icon="ph-number-circle-one-fill" text="Contato" page="1" />
 
             <div class="ph-caret-right-bold"></div>
 
-            <Step number="two" text="Empresa" page="2" />
+            <Step icon="ph-number-circle-two-fill" text="Empresa" page="2" />
 
             <div class="ph-caret-right-bold"></div>
 
-            <Step number="three" text="Projeto" page="3" />
+            <Step icon="ph-number-circle-three-fill" text="Projeto" page="3" />
           </header>
 
           <hr class="border-#E1E1E6" />
@@ -89,7 +89,7 @@ import Button from '@/components/023/button.astro'
             </Section>
 
             <Section page="4" label="Enviado">
-              <footer class="flex gap-2 items-center">
+              <footer class="flex items-center gap-2">
                 <i class="ph-check-bold"></i>
                 <p>Seu projeto foi enviado com sucesso!</p>
               </footer>

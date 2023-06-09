@@ -1,0 +1,97 @@
+---
+import '@/styles/global.css'
+
+import { Image } from '@astrojs/image/components'
+
+import Repo from '@/components/repo.astro'
+import Button from '@/components/022/button.astro'
+---
+
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Projetos semanais #boraCodar da Rocketseat: #22 Um componente de profile settings."
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/rkt-boracodar/favicon.ico" />
+
+    <title>Componente de Profile Settings</title>
+
+    <style is:global>
+      html {
+        @apply text-sm sm:text-base;
+        color-scheme: light !important;
+      }
+
+      * {
+        @apply selection:(bg-#935FD3 text-white);
+      }
+    </style>
+  </head>
+
+  <body class="from-#935FD3 to-#9245F1 h-full w-screen bg-gradient-to-b">
+    <Repo position="top-0 right-0" color="text-white" />
+
+    <div class="font-heebo grid min-h-screen w-full place-content-center p-4">
+      <template x-data="{ logged: true }" x-if="true">
+        <main class="bg-#FDFCFE rounded-3 min-w-93.75 transition-height grid gap-6 px-6 pb-4 pt-6 shadow-xl">
+          <header class="flex items-center gap-4">
+            <figure>
+              <Image width={48} height={48} alt="" src="/rkt-boracodar/022/avatar.png" />
+            </figure>
+
+            <hgroup class="space-y-1">
+              <h1 class="text-#38343D text-4.5 font-bold leading-6">Marvin McKinney</h1>
+              <h3 class="text-#686071 text-3.5 leading-4.5">marvin.mckinney@example.com</h3>
+            </hgroup>
+          </header>
+
+          <div class="space-y-4" x-show="logged">
+            <hr class="border-#F4EFFA" />
+
+            <div>
+              <h2 class="text-#797085 text-3 tracking-0.12 mb-3 uppercase leading-none">conta</h2>
+
+              <Button icon="ph-user-circle" color="text-#38343D" text="Dados pessoais" />
+              <Button icon="ph-key" color="text-#38343D" text="Informações de login" />
+            </div>
+
+            <hr class="border-#F4EFFA" />
+
+            <div>
+              <h2 class="text-#797085 text-3 tracking-0.4 mb-3 uppercase leading-none">preferências</h2>
+
+              <Button icon="ph-bell" color="text-#38343D" text="Notificações" />
+              <Button icon="ph-person-arms-spread" color="text-#38343D" text="Acessibilidade" />
+            </div>
+
+            <hr class="border-#F4EFFA" />
+
+            <div>
+              <h2 class="text-#797085 text-3 tracking-0.12 mb-3 uppercase leading-none">privaciade</h2>
+
+              <Button icon="ph-devices" color="text-#38343D" text="Aparelhos conectados" />
+              <Button icon="ph-user-switch" color="text-#38343D" text="Contas vinculadas" />
+            </div>
+
+            <hr class="border-#F4EFFA" />
+
+            <footer>
+              <Button icon="ph-question" color="text-#38343D" text="Central de Ajuda" nocaret />
+              <Button icon="ph-sign-out" color="text-#AA2222" text="Sair" nocaret @click="logged = false" />
+            </footer>
+          </div>
+
+          <footer class="space-y-4" x-show="!logged">
+            <hr class="border-#F4EFFA" />
+
+            <Button icon="ph-sign-in" color="text-#008726" text="Entrar" nocaret @click="logged = true" />
+          </footer>
+        </main>
+      </template>
+    </div>
+  </body>
+</html>

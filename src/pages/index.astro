@@ -7,18 +7,19 @@ import Repo from '@/components/repo.astro'
 <html lang="pt-br">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="Projetos semanais #boraCodar da Rocketseat." />
     <link rel="shortcut icon" type="image/x-icon" href="/rkt-boracodar/favicon.ico" />
 
     <title>boraCodar</title>
   </head>
-  <body class="w-screen h-screen bg-black">
-    <Repo position="right" color="#8257E5" />
 
-    <main class="w-full h-full grid place-content-center">
-      <h1 class="text-#C6ADFF font-bold font-roboto text-10 whitespace-nowrap select-none leading-none">
+  <body class="h-screen w-screen bg-black">
+    <Repo position="top-0 right-0" color="text-#8257E5" />
+
+    <main class="grid h-full w-full place-content-center">
+      <h1 class="text-#C6ADFF font-roboto text-10 select-none whitespace-nowrap font-bold leading-none">
         <span class="text-#8257E5">{'{'}</span>
         <span class="font-rubik font-regular">#</span>boraCodar
         <span class="text-#8257E5">{'}'}</span>

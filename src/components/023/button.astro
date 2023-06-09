@@ -15,6 +15,7 @@ if (next) {
 <button
   aria-label={text}
   @click.prevent={`page += ${page_increment}`}
-  class={`px-4 py-2 sm:px-8 sm:py-4 rounded-1.5 uppercase font-bold  transition-background-color outline-offset-2 ${styles}`}>
+  class="rounded-1.5 transition-background-color whitespace-nowrap px-4 py-2 font-bold uppercase outline-offset-2 sm:px-8 sm:py-4"
+  class:list={styles}>
   {text}
 </button>

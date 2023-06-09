@@ -1,17 +1,13 @@
 ---
 const { position, color } = Astro.props
-
-const styles = {
-  right: 'absolute right-0 top-0 m-4',
-  left: 'absolute left-0 top-0 m-4'
-}
 ---
 
-<nav class={styles[position]}>
+<nav class="absolute m-4" class:list={position}>
   <a
     target="_blank"
     href="https://github.com/dreisss/rkt-boracodar"
-    class="flex p-1 hover:opacity-80 transition-opacity">
-    <i class={`ph-github-logo text-7 text-${color}`}></i>
+    aria-label="Ir para o repositório com os projetos"
+    class="flex p-1 transition-opacity hover:opacity-80">
+    <i class="ph-github-logo text-7" class:list={color}></i>
   </a>
 </nav>

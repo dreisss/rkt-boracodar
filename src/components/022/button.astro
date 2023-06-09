@@ -1,0 +1,12 @@
+---
+const { '@click': click, icon, color, text, nocaret } = Astro.props
+---
+
+<button class="flex w-full justify-between py-2 transition-opacity hover:opacity-80" class:list={color} @click={click}>
+  <div class="flex items-center gap-2">
+    <div class="text-5" class:list={icon}></div>
+    <span class="text-base leading-5">{text}</span>
+  </div>
+
+  {!nocaret && <div class="ph-caret-right text-#797085 text-base" />}
+</button>
