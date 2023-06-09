@@ -13,6 +13,7 @@ Além disso, [Phosphor Icons](https://phosphoricons.com/) como principal bibliot
 
 ### Projetos
 
-|  #  | Projeto               |                                                   Preview                                                   |
-| :-: | :-------------------- | :---------------------------------------------------------------------------------------------------------: |
-| 023 | Formulário Multi Step | [<img width="500px" src=".github/assets/previews/023.png" />](https://dreisss.github.io/rkt-boracodar/023/) |
+|  #  | Projeto                        |                                                      Desafio                                                       |                                                   Preview                                                   |
+| :-: | :----------------------------- | :----------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: |
+| 023 | Formulário Multi Step          | [:link:](https://www.rocketseat.com.br/boracodar/desafios-anteriores/um-componente-de-profile-settings-desafio-22) | [<img width="500px" src=".github/assets/previews/023.png" />](https://dreisss.github.io/rkt-boracodar/023/) |
+| 022 | Componente de Profile Settings |     [:link:](https://www.rocketseat.com.br/boracodar/desafios-anteriores/um-formulario-multi-step-desafio-23)      | [<img width="500px" src=".github/assets/previews/022.png" />](https://dreisss.github.io/rkt-boracodar/022/) |
