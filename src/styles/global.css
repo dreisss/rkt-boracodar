@@ -9,3 +9,49 @@ html {
   -webkit-text-size-adjust: 100%;
   color-scheme: dark;
 }
+
+@keyframes appear-top {
+  from {
+    transform: translateY(-25%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes appear-right {
+  from {
+    transform: translateX(25%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes appear-bottom {
+  from {
+    transform: translateY(25%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes appear-left {
+  from {
+    transform: translateX(-25%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

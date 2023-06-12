@@ -8,6 +8,12 @@ import {
 } from 'unocss'
 
 export default defineConfig({
+  shortcuts: {
+    'appear-t': 'motion-safe:animate-[appear-top_800ms_ease-in-out_forwards]',
+    'appear-r': 'motion-safe:animate-[appear-right_800ms_ease-in-out_forwards]',
+    'appear-b': 'motion-safe:animate-[appear-bottom_800ms_ease-in-out_forwards]',
+    'appear-l': 'motion-safe:animate-[appear-left_800ms_ease-in-out_forwards]',
+  },
   presets: [
     presetUno(),
     presetIcons({

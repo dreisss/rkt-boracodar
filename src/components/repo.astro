@@ -1,8 +1,8 @@
 ---
-const { position, color } = Astro.props
+const { position, color, animation } = Astro.props
 ---
 
-<nav class="absolute m-4" class:list={position}>
+<nav class="absolute m-4" class:list={[position, animation]}>
   <a
     target="_blank"
     href="https://github.com/dreisss/rkt-boracodar"

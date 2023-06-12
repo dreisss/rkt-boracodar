@@ -29,12 +29,12 @@ import Button from '@/components/023/button.astro'
     </style>
   </head>
 
-  <body class="font-ibm_plex_sans accent-#633BBC h-full w-screen bg-white text-base">
-    <Repo position="top-0 right-0" color="text-#633BBC" />
+  <body class="font-ibm_plex_sans accent-#633BBC h-full w-screen overflow-y-hidden bg-white text-base">
+    <Repo position="top-0 right-0" color="text-#633BBC" animation="appear-r" />
 
     <div class="grid min-h-screen w-full place-content-center p-4">
       <template x-data="{ page: 1 }" x-if="true">
-        <main class="rounded-1.5 border-#E1E1E6 md:min-w-148 grid h-full w-full gap-8 border bg-white p-8">
+        <main class="rounded-1.5 border-#E1E1E6 md:min-w-148 appear-b grid h-full w-full gap-8 border bg-white p-8">
           <header class="flex items-center justify-between">
             <Step icon="ph-number-circle-one-fill" text="Contato" page="1" />
 
