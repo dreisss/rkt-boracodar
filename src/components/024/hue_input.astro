@@ -1,0 +1,38 @@
+---
+const { 'x-model': model } = Astro.props
+---
+
+<style>
+  input[type='range']::-moz-range-thumb {
+    background-color: hsl(var(--color, 272, 98%, 50%));
+    @apply border-1.5px hover:border-1px active:border-2px h-3.5 w-3.5 rounded-full border-white;
+  }
+
+  input[type='range'] {
+    background: linear-gradient(
+      90deg,
+      #ff0000 5.21%,
+      #ff8a00 16.48%,
+      #ffe600 27.74%,
+      #14ff00 39.35%,
+      #00a3ff 49.37%,
+      #0500ff 61.18%,
+      #ad00ff 72.26%,
+      #ff00c7 83.53%,
+      #ff0000 94.61%
+    );
+  }
+</style>
+
+<label class="flex w-full items-center gap-4">
+  <div class="text-6 ph-palette-thin"></div>
+  <input
+    type="range"
+    min="0"
+    max="360"
+    step="1"
+    class="h-1.25 w-full appearance-none rounded-full"
+    x-model={model}
+    :style="`--color: ${h}, ${s}%, ${l}%`"
+  />
+</label>

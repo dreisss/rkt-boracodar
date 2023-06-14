@@ -1,0 +1,24 @@
+<style>
+  div {
+    --color: 272, 98%, 50%;
+    background-color: hsl(var(--color));
+    box-shadow: 0 20px 25px -5px hsla(var(--color), 50%);
+  }
+
+  @keyframes appear-top-indicator {
+    from {
+      transform: translateX(-50%) translateY(-25%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
+
+<div
+  :style="`--color: ${h}, ${s}%, ${l}%;`"
+  class="w-846px left-50% -mt-496px sm:-mt-700px relative aspect-square rounded-full motion-safe:animate-[appear-top-indicator_800ms_ease-in-out_forwards]">
+</div>
