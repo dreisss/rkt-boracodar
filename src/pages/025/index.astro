@@ -1,0 +1,162 @@
+---
+import '@/styles/global.css'
+
+import { Image } from '@astrojs/image/components'
+import Repo from '@/components/repo.astro'
+---
+
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Projetos semanais #boraCodar da Rocketseat: #25 player de VR." />
+    <link rel="shortcut icon" type="image/x-icon" href="/rkt-boracodar/favicon.ico" />
+
+    <link
+      rel="preconnect"
+      href="https://s3-figma-videos-production-sig.figma.com/video/809392342680586849/TEAM/1706/1338/-9793-41dd-895b-abd6b1a01ef3?Expires=1688342400&Signature=oWJTd6A6PaD7MxtJXJ5TT7m6FF2SFsT1YoqG0qSPKDUou0RE8nsXzT18zqfQF26ZJpNkW6x7UZFsuYNkae3qytoipqr6wVy~IvAVPf~IIxm-6DPGggdA5LDXZb3gJbh7I9wMCSxc4F95zmyPyyaVaSpgc0GlzazXPWrNymysrPL4wHkHdAQFOnCryN0uBq9TXUdTCL7Rr7l1hC0-1onvSiLdlZzeO1sK0vNorkBTCNAPadpgR7xj3DJj5Szmotu~qkuHXQ5yecVvhkDzbn589h8A~MO2RykRFfY4QgYOJnqTo14BLb7b3hopnCSNyIEnvlqn2JcE-zkHp~rVzAziQg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+    />
+    <link
+      rel="preload"
+      href="https://s3-figma-videos-production-sig.figma.com/video/809392342680586849/TEAM/1706/1338/-9793-41dd-895b-abd6b1a01ef3?Expires=1688342400&Signature=oWJTd6A6PaD7MxtJXJ5TT7m6FF2SFsT1YoqG0qSPKDUou0RE8nsXzT18zqfQF26ZJpNkW6x7UZFsuYNkae3qytoipqr6wVy~IvAVPf~IIxm-6DPGggdA5LDXZb3gJbh7I9wMCSxc4F95zmyPyyaVaSpgc0GlzazXPWrNymysrPL4wHkHdAQFOnCryN0uBq9TXUdTCL7Rr7l1hC0-1onvSiLdlZzeO1sK0vNorkBTCNAPadpgR7xj3DJj5Szmotu~qkuHXQ5yecVvhkDzbn589h8A~MO2RykRFfY4QgYOJnqTo14BLb7b3hopnCSNyIEnvlqn2JcE-zkHp~rVzAziQg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+      as="video"
+    />
+
+    <title>Player de VR</title>
+
+    <style>
+      #background::after {
+        @apply absolute h-full w-full content-[''];
+        background-image: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+      }
+
+      .glass {
+        @apply rounded-full bg-white/10 backdrop-blur-lg;
+        box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.05), 0px 1px 1px 0px rgba(255, 255, 255, 0.3) inset,
+          0px -1px 1px 0px rgba(255, 255, 255, 0.1) inset;
+      }
+
+      .icon-btn {
+        @apply text-6 transition-background-color flex rounded-full p-2 opacity-80 transition-transform hover:bg-white/20 active:scale-90;
+      }
+
+      #address-bar {
+        @apply min-w-110 flex items-center justify-between rounded-full bg-black/10 p-3;
+        box-shadow: 0px -1px 0px 0px rgba(255, 255, 255, 0.1) inset, 0px 1px 0px 0px rgba(0, 0, 0, 0.2) inset;
+      }
+
+      #screen {
+        @apply min-w-240 min-h-135 rounded-8 overflow-hidden bg-white/10 backdrop-blur-lg;
+        box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+
+  <body class="h-full">
+    <Repo position="top-0 right-0" color="text-white" animation="appear-r" />
+
+    <div id="background" class="-z-1 absolute h-full w-full">
+      <Image
+        width="1920"
+        height="1080"
+        alt=""
+        src={import('@/assets/025/background.png')}
+        class="absolute h-full w-full object-cover"
+      />
+    </div>
+
+    <div class="left-50% -translate-x-50% absolute text-center lg:hidden">
+      <h2 class="font-inter text-lg">Para uma melhor experiência, utilize uma tela maior!</h2>
+    </div>
+
+    <main
+      x-data="{ playing: false }"
+      x-init="$watch('playing', (p) => { if (p) { $refs.video.play() } else { $refs.video.pause() } })"
+      class="top-50% left-50% -translate-50% absolute hidden items-center gap-3 lg:flex">
+      <aside class="glass appear-l grid h-min gap-3 p-3">
+        <button class="icon-btn" @click="playing = !playing" :aria-label="playing ? 'Continuar' : 'Pausar'">
+          <i class="ion:play-circle-outline" x-show="!playing"></i>
+
+          <template x-if="true">
+            <i class="ion:pause-circle-outline" x-show="playing"></i>
+          </template>
+        </button>
+
+        <button class="icon-btn" aria-label="Acessibilidade">
+          <i class="ion:accessibility-outline"></i>
+        </button>
+
+        <button class="icon-btn" aria-label="Albuns">
+          <i class="ion:albums-outline"></i>
+        </button>
+
+        <button class="icon-btn" aria-label="Pesquisar">
+          <i class="ion:search-outline"></i>
+        </button>
+      </aside>
+
+      <div class="grid place-items-center gap-3">
+        <header class="glass appear-t w-min px-3 py-2">
+          <nav class="flex items-center justify-center gap-6">
+            <div class="flex gap-4">
+              <button class="icon-btn" aria-label="Barra lateral">
+                <i class="akar-icons:sidebar-left"></i>
+              </button>
+
+              <button class="icon-btn" aria-label="Voltar">
+                <i class="akar-icons:chevron-left"></i>
+              </button>
+
+              <button class="icon-btn" aria-label="Avançar">
+                <i class="akar-icons:chevron-right"></i>
+              </button>
+            </div>
+
+            <div id="address-bar">
+              <button aria-label="Texto">
+                <div class="ion:text text-4 opacity-80"></div>
+              </button>
+
+              <h1 class="flex items-center gap-1 opacity-80">
+                <div class="ion:lock-closed text-white"></div>
+                <span class="font-inter text-regular text-white"> rocketseat.com</span>
+              </h1>
+
+              <button aria-label="Recarregar">
+                <div class="ion:refresh text-6 opacity-80"></div>
+              </button>
+            </div>
+
+            <div class="flex gap-4">
+              <button class="icon-btn" aria-label="Compartilhar">
+                <i class="ion:share-outline"></i>
+              </button>
+
+              <button class="icon-btn" aria-label="Adicionar">
+                <i class="ion:add-outline"></i>
+              </button>
+
+              <button class="icon-btn" aria-label="Copiar">
+                <i class="ion:copy-outline"></i>
+              </button>
+            </div>
+          </nav>
+        </header>
+
+        <div id="screen">
+          <video
+            @click="playing = !playing"
+            x-ref="video"
+            src="https://s3-figma-videos-production-sig.figma.com/video/809392342680586849/TEAM/1706/1338/-9793-41dd-895b-abd6b1a01ef3?Expires=1688342400&Signature=oWJTd6A6PaD7MxtJXJ5TT7m6FF2SFsT1YoqG0qSPKDUou0RE8nsXzT18zqfQF26ZJpNkW6x7UZFsuYNkae3qytoipqr6wVy~IvAVPf~IIxm-6DPGggdA5LDXZb3gJbh7I9wMCSxc4F95zmyPyyaVaSpgc0GlzazXPWrNymysrPL4wHkHdAQFOnCryN0uBq9TXUdTCL7Rr7l1hC0-1onvSiLdlZzeO1sK0vNorkBTCNAPadpgR7xj3DJj5Szmotu~qkuHXQ5yecVvhkDzbn589h8A~MO2RykRFfY4QgYOJnqTo14BLb7b3hopnCSNyIEnvlqn2JcE-zkHp~rVzAziQg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4">
+          </video>
+        </div>
+
+        <footer class="appear-b flex gap-4">
+          <span class="backdrop-blur-2px flex rounded-full bg-white/60 p-1"></span>
+          <span class="backdrop-blur-2px w-21.5 flex rounded-full bg-white/60 p-1"></span>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>

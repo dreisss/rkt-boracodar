@@ -26,7 +26,8 @@ export default defineConfig({
         rubik: 'Rubik',
         ibm_plex_sans: 'IBM Plex Sans:400,700',
         heebo: 'Heebo:400,700',
-        raleway: 'Raleway:300'
+        raleway: 'Raleway:300',
+        inter: 'Inter:400'
       }
     })
   ],
